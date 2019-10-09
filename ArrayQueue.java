@@ -2,7 +2,7 @@ import java.util.EmptyStackException;
 
 public class ArrayQueue<T> implements Queue<T> {
     int head = 0, tail = 0;
-    T[] a = (T[]) new Object[2];
+    T[] a = (T[]) new Object[10];
 
     @Override
     public T dequeue() {

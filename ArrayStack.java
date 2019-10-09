@@ -3,7 +3,7 @@ import java.util.EmptyStackException;
 
 public class ArrayStack<T> implements Stack<T>{
     int top = -1;
-    T[] a = (T[]) new Object[1];
+    T[] a = (T[]) new Object[10];
 
     @Override
     public void push(T item) {
@@ -26,12 +26,12 @@ public class ArrayStack<T> implements Stack<T>{
 
     @Override
     public boolean empty() {
-        return top < 0;
+        return top == -1;
     }
 
     protected void growArray(){
         T[] temp = a;
         a = (T[]) new Object[a.length*2];
-        System.arraycopy(temp,0, a, 0, temp.length);
+        System.arraycopy(temp,0, a, 0, temp.length); // Arrays.copyOfRange();
     }
 }
